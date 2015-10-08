@@ -1,0 +1,14 @@
+{
+  "dev": {
+    "driver": "mysql",
+    "user": "root",
+    "database": "idealist",
+    "password": ""
+  },
+ 
+  "production": {
+    "driver": "mysql",
+    "user": "root",
+    "database": "idealist"    
+  }
+}
