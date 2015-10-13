@@ -15,7 +15,8 @@ router.route('/listas')
             if(err){                
 				res.send(err);
             }
-            res.json({rows});
+             res.json({success: true,                          
+                          rows: rows});
          });
 
     });
@@ -82,12 +83,14 @@ remove curut2.all() if you dont want it
 .get(function(req,res,next){
 
     var lista_id = req.params.lista_id;
-
-    req.getConnection(function(err,conn){
+    console.log(lista_id);
+        req.getConnection(function(err,conn){
 
         if (err) return next("Cannot Connect");
 
-        var query = conn.query("SELECT * FROM tblListas WHERE idListas = ? ",[lista_id],function(err,rows){
+        var query = conn.query("SELECT * FROM tblListas WHERE idLista = ? ",[lista_id],function(err,rows){
+
+
 
             if(err){
                 console.log(err);
@@ -96,9 +99,10 @@ remove curut2.all() if you dont want it
 
             //if user not found
             if(rows.length < 1)
-                return res.send("Estabelecimento Not found");
+                return res.send("Lista Not found");
 
-            res.json({rows});
+             res.json({success: true,                          
+                          rows: rows});
         });
 
     });

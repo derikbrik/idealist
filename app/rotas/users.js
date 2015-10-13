@@ -15,7 +15,7 @@ router.route('/users')
             if(err){                
 				res.send(err);
             }
-            res.json({rows});
+            res.json(rows);
          });
 
     });
@@ -102,7 +102,7 @@ remove curut2.all() if you dont want it
             if(rows.length < 1)
                 return res.send("User Not found");
 
-            res.json({rows});
+            res.json(rows);
         });
 
     });

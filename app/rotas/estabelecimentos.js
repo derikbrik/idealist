@@ -15,7 +15,7 @@ router.route('/estabelecimentos')
             if(err){                
 				res.send(err);
             }
-            res.json({rows});
+            res.json(rows);
          });
 
     });
@@ -98,7 +98,7 @@ remove curut2.all() if you dont want it
             if(rows.length < 1)
                 return res.send("Estabelecimento Not found");
 
-            res.json({rows});
+            res.json(rows);
         });
 
     });
